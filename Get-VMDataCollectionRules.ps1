@@ -1,3 +1,17 @@
+<#
+    Author: Brian P. Mohr
+    Email: brian@cybermohr.com
+    Social: https://www.linkedin.com/in/bpmohr
+    Script Name: Get-VMDataCollectionRules.ps1
+    Version: 1.0
+    Description:
+        This PowerShell script is designed to audit Azure Virtual Machines for associated Data
+        Collection Rules. The script will loop through all the subscriptions within an Azure tenant to
+        identify Virtual Machines and check if they have a Data Collection Rule associated with them
+        for log collection. If a rule is associated, it also fetches the destination where the collected
+        data is being sent.
+#>
+
 # Login to Azure
 # Uncomment the below line if you're not already logged in
 # Login-AzAccount
