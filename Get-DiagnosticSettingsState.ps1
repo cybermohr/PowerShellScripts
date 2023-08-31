@@ -1,3 +1,15 @@
+<#
+    Author: Brian P. Mohr
+    Email: brian@cybermohr.com
+    Social: https://www.linkedin.com/in/bpmohr
+    Script Name: Get-DiagnosticSettingsState.ps1
+    Version: 1.0
+    Description:
+        This PowerShell script checks the diagnostic settings of all Azure resources
+        across all subscriptions in a tenant. It exports a CSV file that includes 
+        details about the diagnostic settings for each resource.
+#>
+
 # Load the Az module
 Import-Module Az
 
@@ -14,6 +26,7 @@ $subscriptions = Get-AzSubscription
 foreach ($subscription in $subscriptions) {
     # Select the subscription
     Select-AzSubscription -SubscriptionId $subscription.Id
+    Write-Host "Checking Resources in subscription: $($subscription.Name)"
 
     # Get all resource IDs in the subscription
     $resourceIds = Get-AzResource | Select-Object -ExpandProperty ResourceId
