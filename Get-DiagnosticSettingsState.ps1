@@ -60,3 +60,5 @@ foreach ($subscription in $subscriptions) {
 
 # Export results to CSV
 $results | Export-Csv -Path "TenantDiagnosticSettings.csv" -NoTypeInformation
+
+Write-Host "Script completed. The results are saved in TenantDiagnosticSettings.csv"
